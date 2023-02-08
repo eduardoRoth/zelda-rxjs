@@ -1,0 +1,7 @@
+{
+  "name": "zelda-rxjs",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
