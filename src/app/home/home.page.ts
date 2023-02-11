@@ -1,15 +1,19 @@
 import { Component } from '@angular/core';
-import { RefresherCustomEvent } from '@ionic/angular';
+import { IonicModule, RefresherCustomEvent } from '@ionic/angular';
 
-import { DataService, Message } from '../services/data.service';
+import { CharactersService, Message } from '../services/characters.service';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
+  standalone: true,
+  imports: [CommonModule, FormsModule, IonicModule],
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
-  constructor(private data: DataService) { }
+export default class HomePage {
+  constructor(private data: CharactersService) {}
 
   refresh(ev: any) {
     setTimeout(() => {
@@ -20,5 +24,4 @@ export class HomePage {
   getMessages(): Message[] {
     return this.data.getMessages();
   }
-
 }

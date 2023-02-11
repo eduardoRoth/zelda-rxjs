@@ -11,7 +11,7 @@ export interface Message {
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class CharactersService {
   public messages: Message[] = [
     {
       fromName: 'Matt Chorsey',
